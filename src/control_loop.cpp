@@ -74,9 +74,8 @@ void CONTROLLER::loop() {
         //PID action
         pid = _kp*e+ _kd*de + _ki*ie;
 
-        //Output: control = control * time 
-        //we assume the system to be an integrator
-        output += pid*dt;
+        //Output
+        output = pid;
 
         cout << "System error: " << e << " System output: " << output << endl;
         myfile.open ("Values.txt", ios::app);
